@@ -1,0 +1,715 @@
+/* General Body and Container Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e2eefd, #f6f9fc);
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container,
+.profile-container,
+.recommendations-container,
+.admin-container {
+    max-width: 1200px; /* Increased max-width for larger screens */
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Header Styles (index.php, login.php, register.php, admin_login.php) */
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.header p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #0056b3;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+    display: block; /* Make links block-level for better touch targets */
+}
+
+.navbar ul li a:hover {
+    color: #cceeff;
+}
+
+/* Main Content Area Styles */
+.main-content {
+    flex-grow: 1;
+    padding: 40px 20px;
+    max-width: 960px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.main-content h2 {
+    color: #007bff;
+    font-size: 2.2em;
+    margin-bottom: 25px;
+}
+
+.main-content p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* Features Grid (index.php) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.feature-item {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.feature-item h3 {
+    color: #0056b3;
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+/* Form Styles (login, register, profile, admin forms) */
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+.form-container h2,
+.form-container h1 { /* Added h1 for profile page */
+    color: #0056b3;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%; /* Changed from calc(100% - 22px) for simpler responsiveness */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; /* Crucial for width: 100% with padding */
+}
+
+.form-group small {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.btn-primary,
+.btn-submit,
+.btn-danger,
+.btn-info {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    text-decoration: none; /* For button-like links */
+    display: inline-block; /* For button-like links */
+}
+
+.btn-primary:hover { background-color: #0056b3; }
+.btn-submit { background-color: #28a745; } /* Green for save/submit */
+.btn-submit:hover { background-color: #218838; }
+.btn-danger { background-color: #dc3545; } /* Red for delete */
+.btn-danger:hover { background-color: #c82333; }
+.btn-info { background-color: #17a2b8; } /* Blue for info/edit */
+.btn-info:hover { background-color: #138496; }
+
+.message {
+    background-color: #e9ecef;
+    color: #333;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* User Dashboard Specific Styles */
+.user-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.dashboard-card {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.dashboard-card h3 {
+    color: #0056b3;
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.dashboard-card p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Admin Dashboard Specific Styles */
+.admin-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Profile and Recommendations Specific Styles */
+.form-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.form-section h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.skills-header {
+    display: flex;
+    flex-direction: column; /* Stack on small screens */
+    align-items: flex-start; /* Align items to the start */
+    margin-bottom: 15px;
+}
+
+.skills-header h3 {
+    margin: 0 0 10px 0; /* Add margin below h3 */
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.skill-search-bar {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%; /* Make search bar full width on small screens */
+    max-width: 300px; /* Limit max width on larger screens */
+    box-sizing: border-box;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Smaller minmax for skills on mobile */
+    gap: 8px; /* Smaller gap for skills on mobile */
+    margin-top: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+.skills-grid label {
+    padding: 6px 10px; /* Smaller padding for skills on mobile */
+    font-size: 0.9em; /* Smaller font for skills on mobile */
+}
+
+.quiz-question { margin-bottom: 20px; }
+.quiz-question p { font-weight: bold; margin-bottom: 10px; }
+.quiz-options label { display: block; margin-bottom: 5px; cursor: pointer; }
+.quiz-options input[type="radio"],
+.quiz-options input[type="checkbox"] { margin-right: 8px; }
+
+
+/* Tables (for admin pages) */
+.table-responsive {
+    overflow-x: auto; /* Allows horizontal scrolling on small screens */
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 5px; /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+    justify-content: center; /* Center buttons if they wrap */
+}
+
+.action-buttons .btn {
+    padding: 8px 12px; /* Smaller padding for action buttons */
+    font-size: 0.9em; /* Smaller font for action buttons */
+    width: auto; /* Allow buttons to size naturally */
+    min-width: 70px; /* Ensure minimum width for readability */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+.back-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* Resume Specific Styles (user/generate_resume.php) */
+.resume-container {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    box-sizing: border-box; /* Ensure padding is included */
+}
+.resume-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 15px;
+}
+.resume-header h1 {
+    margin: 0;
+    color: #007bff;
+    font-size: 2.5em;
+}
+.resume-header p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #555;
+    word-wrap: break-word; /* Ensure long URLs/text break */
+}
+.resume-section {
+    margin-bottom: 25px;
+}
+.resume-section h2 {
+    background-color: #f0f0f0;
+    color: #007bff;
+    padding: 10px 15px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-left: 5px solid #007bff;
+    font-size: 1.5em;
+}
+.resume-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.resume-section ul li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+.resume-section ul li::before {
+    content: '•';
+    color: #007bff;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+}
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.skill-tag {
+    background-color: #e9f7ff;
+    color: #007bff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    border: 1px solid #cceeff;
+}
+.print-button {
+    text-align: center;
+    margin-top: 20px;
+}
+.print-button button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+.print-button button:hover {
+    background-color: #218838;
+}
+.summary-text {
+    white-space: pre-wrap;
+}
+
+/* ==========================================================================
+   Responsive Design - Media Queries
+   ========================================================================== */
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container,
+    .profile-container,
+    .recommendations-container,
+    .admin-container,
+    .form-container,
+    .main-content,
+    .resume-container {
+        margin: 20px auto; /* Reduce top/bottom margin */
+        padding: 15px; /* Reduce padding for smaller screens */
+        box-shadow: none; /* Remove shadow to save space */
+        border-radius: 0; /* Remove border-radius */
+    }
+
+    .header h1 {
+        font-size: 2em; /* Smaller font size for header title */
+    }
+
+    .header p {
+        font-size: 1em; /* Smaller font size for header subtitle */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .navbar ul li {
+        margin: 5px 0; /* Adjust vertical margin */
+        width: 100%; /* Make nav links full width */
+    }
+
+    .navbar ul li a {
+        padding: 8px 0; /* Increase padding for touch targets */
+        font-size: 1em; /* Slightly smaller font */
+    }
+
+    .main-content h2 {
+        font-size: 1.8em; /* Smaller main heading */
+    }
+
+    .main-content p {
+        font-size: 1em; /* Smaller paragraph text */
+    }
+
+    .features-grid,
+    .user-dashboard-grid,
+    .admin-dashboard-grid {
+        grid-template-columns: 1fr; /* Single column layout for grids */
+        gap: 15px; /* Smaller gap */
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group input[type="number"],
+    .form-group textarea,
+    .skill-search-bar {
+        font-size: 14px; /* Slightly smaller font in form fields */
+        padding: 8px; /* Smaller padding */
+    }
+
+    .btn-primary,
+    .btn-submit,
+    .btn-danger,
+    .btn-info {
+        font-size: 16px; /* Slightly smaller button font */
+        padding: 10px; /* Smaller button padding */
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Even smaller minmax for skills */
+        gap: 5px; /* Even smaller gap */
+    }
+    .skills-grid label {
+        padding: 5px 8px; /* Smaller padding for skills */
+        font-size: 0.85em; /* Even smaller font for skills */
+    }
+
+    table {
+        font-size: 0.85em; /* Smaller font for table content */
+    }
+    table th, table td {
+        padding: 8px 5px; /* Smaller padding in table cells */
+    }
+    .action-buttons {
+        flex-direction: column; /* Stack action buttons vertically */
+        gap: 8px;
+    }
+    .action-buttons .btn {
+        width: 100%; /* Make action buttons full width */
+    }
+
+    .resume-header h1 {
+        font-size: 2em;
+    }
+    .resume-header p {
+        font-size: 0.9em;
+    }
+    .resume-section h2 {
+        font-size: 1.3em;
+        padding: 8px 10px;
+    }
+    .resume-section ul li, .summary-text {
+        font-size: 0.9em;
+    }
+    .skill-tag {
+        font-size: 0.8em;
+        padding: 4px 8px;
+    }
+}
+
+/* Medium devices (tablets, 601px to 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    .container,
+    .profile-container,
+    .recommendations-container,
+    .admin-container,
+    .form-container,
+    .main-content,
+    .resume-container {
+        margin: 30px auto;
+        padding: 25px;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+    }
+
+    .main-content h2 {
+        font-size: 2em;
+    }
+
+    .features-grid,
+    .user-dashboard-grid,
+    .admin-dashboard-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax for tablets */
+        gap: 20px;
+    }
+
+    .skills-header {
+        flex-direction: row; /* Keep side-by-side on tablets */
+        justify-content: space-between;
+        align-items: center;
+    }
+    .skills-header h3 {
+        margin-bottom: 0; /* Remove bottom margin if side-by-side */
+    }
+    .skill-search-bar {
+        width: auto; /* Allow natural width */
+        max-width: 250px; /* Constrain search bar width */
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 8px;
+    }
+}
+
+/* Large devices (desktops, 901px and up) - Current default styles apply */
+@media only screen and (min-width: 901px) {
+    .skills-header {
+        flex-direction: row; /* Ensure side-by-side on larger screens */
+        justify-content: space-between;
+        align-items: center;
+    }
+    .skills-header h3 {
+        margin-bottom: 0;
+    }
+    .skill-search-bar {
+        width: 250px; /* Specific width for desktop */
+    }
+}
+
+/* Print Styles */
+@media print {
+    .back-link, .print-button, .navbar, .header, .footer {
+        display: none !important; /* Hide navigation, header, footer, and buttons when printing */
+    }
+    body {
+        background-color: #fff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .resume-container {
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    /* Ensure text colors are print-friendly */
+    body, .resume-container, .resume-section, .resume-header h1, .resume-header p, .resume-section h2, .resume-section ul li, .summary-text, .skill-tag {
+        color: #000 !important; /* Black text for print */
+        background-color: #fff !important; /* White background for print */
+    }
+    .resume-section h2 {
+        border-left-color: #000 !important; /* Black border for print */
+    }
+    .resume-section ul li::before {
+        color: #000 !important; /* Black bullet points for print */
+    }
+}
